@@ -1,8 +1,5 @@
-FROM php:8.4.7-fpm
+FROM php:8.4.7-fpm-alpine3.20
 
-RUN apt-get update && apt-get install -y \
-    default-mysql-client \
-    default-libmysqlclient-dev \
-    && docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql
     
 WORKDIR /var/www 
