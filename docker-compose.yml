@@ -1,4 +1,14 @@
 services:
+  nginx:
+    build: 
+      context: ./
+      dockerfile: docker/nginx.docker
+    volumes:
+      - ./:/var/www
+    ports:
+      - 8080:80
+    depends_on: 
+      - php-fpm
   php-fpm:
     build: 
       context: ./
