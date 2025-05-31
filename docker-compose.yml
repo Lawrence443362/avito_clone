@@ -51,7 +51,7 @@ services:
         ports:
             - 33061:3306
     redis:
-        image: redis:3.0
+        image: redis:7.4.4-alpine3.21
         ports:
             - 63791:6379
     node-cli: 
