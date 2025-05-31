@@ -20,6 +20,9 @@ services:
       DB_HOST: mysql
       REDIS_PORT: 6379
       REDIS_HOST: redis
+    depends_on:
+      - mysql
+      - redis
   mysql: 
     image: mysql:5.7
     volumes:
