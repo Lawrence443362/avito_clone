@@ -4,6 +4,12 @@ start:
 stop: 
 	docker compose down
 
+php-deps-install:
+	docker compose exec composer install
+
+php-generate-key:
+	docker compose exec php-cli php artisan key:generate
+
 migrate: 
 	docker compose exec php-cli php artisan migrate
 
