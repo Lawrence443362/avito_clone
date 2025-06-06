@@ -39,6 +39,14 @@ services:
             REDIS_PORT: 6379
             REDIS_HOST: redis
         tty: true
+    composer: 
+        image: composer:2.8.9
+        working_dir: /var/www      
+        volumes: 
+            - ./:/var/www
+        tty: true
+        # stdin_open: true   # <-- Это важно для интерактивных сессий
+        command: bash
     mysql:
         image: mysql:5.7
         volumes:
